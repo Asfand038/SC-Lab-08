@@ -85,5 +85,79 @@ public abstract class GraphInstanceTest {
         assertTrue(graph.hasVertex("B"));
         assertFalse(graph.hasVertex("C"));
     }
+
+    // Test adding edges to the graph
+    @Test
+    public void testAddEdges() {
+        // Testing strategy: Add edges between vertices in the graph
+        // Description: Adds vertices and establishes an edge between them with a specific weight
+        Graph<String> graph = emptyInstance();
+        graph.add("A");
+        graph.add("B");
+        graph.set("A", "B", 5);
+        assertTrue(graph.vertices().contains("A"));
+        assertTrue(graph.vertices().contains("B"));
+        assertTrue(graph.hasEdge("A", "B"));
+        assertEquals(5, graph.getWeight("A", "B"));
+    }
     
+    // Test removing edges from the graph
+    @Test
+    public void testRemoveEdges() {
+        // Testing strategy: Remove edges between vertices
+        // Description: Adds vertices, establishes an edge, removes it, and checks if the edge is absent
+        Graph<String> graph = emptyInstance();
+        graph.add("A");
+        graph.add("B");
+        graph.set("A", "B", 5);
+        graph.remove("A", "B");
+        assertFalse(graph.hasEdge("A", "B"));
+    }
+    
+    // Test existence of edges in the graph
+    @Test
+    public void testEdgesExistence() {
+        // Testing strategy: Check if edges exist between specific vertices
+        // Description: Adds vertices and checks for the existence of edges between them
+        Graph<String> graph = emptyInstance();
+        graph.add("A");
+        graph.add("B");
+        assertFalse(graph.hasEdge("A", "B"));
+    }
+    
+    // Test setting and getting weights for edges
+    @Test
+    public void testSetAndGetWeights() {
+        // Testing strategy: Set and retrieve weights for edges
+        // Description: Adds vertices, sets weights for edges, and retrieves those weights
+        Graph<String> graph = emptyInstance();
+        graph.add("A");
+        graph.add("B");
+        graph.set("A", "B", 5);
+        assertEquals(5, graph.getWeight("A", "B"));
+        
+        // Test updating weight
+        graph.set("A", "B", 10);
+        assertEquals(10, graph.getWeight("A", "B"));
+    }
+    
+    // Test various graph modifications
+    @Test
+    public void testGraphModification() {
+        // Testing strategy: Perform various modifications to the graph
+        // Description: Adds vertices, establishes edges, removes vertices and edges
+        // Verifies the graph's integrity after these operations
+        Graph<String> graph = emptyInstance();
+        graph.add("A");
+        graph.add("B");
+        graph.add("C");
+        graph.set("A", "B", 5);
+        graph.set("B", "C", 3);
+        graph.remove("A");
+        assertFalse(graph.hasVertex("A"));
+        assertTrue(graph.hasVertex("B"));
+        assertTrue(graph.hasVertex("C"));
+        assertFalse(graph.hasEdge("A", "B"));
+        assertTrue(graph.hasEdge("B", "C"));
+    }
 }
