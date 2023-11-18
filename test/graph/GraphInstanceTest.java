@@ -20,7 +20,11 @@ import org.junit.Test;
 public abstract class GraphInstanceTest {
     
     // Testing strategy
-    //   TODO
+    //   For each method in the Graph interface, we'll test various aspects:
+    //   - Adding and removing vertices
+    //   - Adding and removing edges
+    //   - Setting and retrieving weights
+    //   - Modifying the graph (combining different operations)
     
     /**
      * Overridden by implementation-specific test classes.
