@@ -40,11 +40,50 @@ public abstract class GraphInstanceTest {
     
     @Test
     public void testInitialVerticesEmpty() {
-        // TODO you may use, change, or remove this test
+        // Testing strategy: Empty graph should have no vertices initially
+        // Description: Asserts that an empty graph has no vertices using the vertices() method
         assertEquals("expected new graph to have no vertices",
                 Collections.emptySet(), emptyInstance().vertices());
     }
     
-    // TODO other tests for instance methods of Graph
+    // Test adding vertices to the graph
+    @Test
+    public void testAddVertices() {
+        // Testing strategy: Add vertices to an empty graph
+        // Description: Adds vertices to an empty graph and verifies their presence
+        Graph<String> graph = emptyInstance();
+        graph.add("A");
+        graph.add("B");
+        assertTrue(graph.vertices().contains("A"));
+        assertTrue(graph.vertices().contains("B"));
+        assertEquals(2, graph.vertices().size());
+    }
+    
+    // Test removing vertices from the graph
+    @Test
+    public void testRemoveVertices() {
+        // Testing strategy: Remove vertices from a graph
+        // Description: Adds vertices, removes one, and checks if the removed vertex is absent
+        Graph<String> graph = emptyInstance();
+        graph.add("A");
+        graph.add("B");
+        graph.remove("A");
+        assertFalse(graph.vertices().contains("A"));
+        assertTrue(graph.vertices().contains("B"));
+        assertEquals(1, graph.vertices().size());
+    }
+    
+    // Test existence of vertices in the graph
+    @Test
+    public void testVerticesExistence() {
+        // Testing strategy: Verify if vertices exist in the graph
+        // Description: Adds vertices to a graph and checks for their existence
+        Graph<String> graph = emptyInstance();
+        graph.add("A");
+        graph.add("B");
+        assertTrue(graph.hasVertex("A"));
+        assertTrue(graph.hasVertex("B"));
+        assertFalse(graph.hasVertex("C"));
+    }
     
 }
