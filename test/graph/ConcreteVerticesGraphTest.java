@@ -160,7 +160,7 @@ public class ConcreteVerticesGraphTest extends GraphInstanceTest {
         assertEquals("Expected same number of source vertices", 
                 intialNumSources, currentNumSources);        
     }
-    
+
     @Test
     //covers vertex contains multiple sources,
     //       source exists
@@ -214,6 +214,7 @@ public class ConcreteVerticesGraphTest extends GraphInstanceTest {
         assertEquals("Expected correct weight added", 
                 (Integer)weight, targets.get(target));
     }
+
     @Test
     //covers vertex contains multiple targets
     //       target exists
@@ -269,6 +270,7 @@ public class ConcreteVerticesGraphTest extends GraphInstanceTest {
         assertEquals("Expected same number of target vertices",
                 initialNumTargets, CurrentNumTargets);
     }
+
     //Tests for remove()
     @Test
     //covers empty vertex
@@ -300,6 +302,7 @@ public class ConcreteVerticesGraphTest extends GraphInstanceTest {
         assertEquals("Expected no new target vertices", 
                 initialNumTargets, currentNumTargets);
     }
+    
     @Test
     //covers vertex contains multiple sources
     //       otherVertex exists as a source
