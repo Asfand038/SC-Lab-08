@@ -68,7 +68,6 @@ public abstract class GraphInstanceTest {
     //      source: doesn't exist in graph, exists in graph,
     //             has no targets, has multiple targets
     //      sourceTargets contains all target vertices from source
-    //
     
     /**
      * Overridden by implementation-specific test classes.
