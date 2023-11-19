@@ -55,9 +55,11 @@ public class ConcreteVerticesGraph<L> implements Graph<L> {
   
     public ConcreteVerticesGraph(){
     }
+
     private void checkRep(){        
         assert vertices().size() == vertices.size();
     }
+
     //helper method
     /**
      * Returns the index of a vertex in list of vertices
@@ -75,6 +77,7 @@ public class ConcreteVerticesGraph<L> implements Graph<L> {
         return -1;
     }
     //end of helper method
+    
     @Override public boolean add(L vertex) {        
         if ( vertices().contains(vertex) ) {
             return false;

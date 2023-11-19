@@ -48,10 +48,12 @@ public class ConcreteEdgesGraph<L> implements Graph<L> {
         
         assert sizeOfVertices >= minNumberOfVertices;  
     }
+
     /** Returns true if vertex label is added*/
     @Override public boolean add(L vertex) {
         return vertices.add(vertex);
-    }    
+    }   
+
     @Override public int set(L source, L target, int weight) {
         assert weight >= 0;
         
@@ -76,6 +78,7 @@ public class ConcreteEdgesGraph<L> implements Graph<L> {
         checkRep();
         return previousWeight;
     }
+    
     //helper code
     /**
      * Checks if an edge exists in this graph
