@@ -40,6 +40,7 @@ public class ConcreteEdgesGraph<L> implements Graph<L> {
     
     public ConcreteEdgesGraph(){
     }
+
     private void checkRep(){
         final int sizeOfEdges = edges.size();
         final int sizeOfVertices = vertices.size();
@@ -132,6 +133,7 @@ public class ConcreteEdgesGraph<L> implements Graph<L> {
         checkRep();
         return initialSizeVertices - 1 == vertices.size();
     }
+    
     /** Returns an read-only view of this ConcreteEdgesGraph's vertices */
     @Override public Set<L> vertices() {
         return Collections.unmodifiableSet(vertices);
