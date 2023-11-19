@@ -40,6 +40,7 @@ public class ConcreteEdgesGraph<L> implements Graph<L> {
     
     public ConcreteEdgesGraph(){
     }
+
     private void checkRep(){
         final int sizeOfEdges = edges.size();
         final int sizeOfVertices = vertices.size();
@@ -48,10 +49,12 @@ public class ConcreteEdgesGraph<L> implements Graph<L> {
         
         assert sizeOfVertices >= minNumberOfVertices;  
     }
+
     /** Returns true if vertex label is added*/
     @Override public boolean add(L vertex) {
         return vertices.add(vertex);
-    }    
+    }   
+
     @Override public int set(L source, L target, int weight) {
         assert weight >= 0;
         
@@ -76,6 +79,7 @@ public class ConcreteEdgesGraph<L> implements Graph<L> {
         checkRep();
         return previousWeight;
     }
+    
     //helper code
     /**
      * Checks if an edge exists in this graph
@@ -129,6 +133,7 @@ public class ConcreteEdgesGraph<L> implements Graph<L> {
         checkRep();
         return initialSizeVertices - 1 == vertices.size();
     }
+    
     /** Returns an read-only view of this ConcreteEdgesGraph's vertices */
     @Override public Set<L> vertices() {
         return Collections.unmodifiableSet(vertices);
